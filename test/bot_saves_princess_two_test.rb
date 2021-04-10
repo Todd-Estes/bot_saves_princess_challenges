@@ -1,13 +1,13 @@
 require 'minitest/autorun'
-require './lib/next_move.rb'
+require './lib/bot_saves_princess_two.rb'
 
-class NextMoveTest < Minitest::Test
+class BotSavesPrincessTwoTest < Minitest::Test
   def test_find_princess_position
     n = 3
     grid = ['--p', '-m-', '---']
     expected = [[0], [2]]
-    assert_equal expected, NextMove.find_princess_position(n, grid)
-    refute_equal expected, NextMove.find_princess_position(3, ['---', '-m-', '-p-'])
+    assert_equal expected, BotSavesPrincessTwo.find_princess_position(n, grid)
+    refute_equal expected, BotSavesPrincessTwo.find_princess_position(3, ['---', '-m-', '-p-'])
   end
 
   def test_next_move_is_right
@@ -18,7 +18,7 @@ class NextMoveTest < Minitest::Test
     # the bot's position column position will be 1
     grid = ['m-p', '---', '---']
     expected = /RIGHT\n/
-    assert_output(expected) { NextMove.next_move(n, r, c, grid)}
+    assert_output(expected) { BotSavesPrincessTwo.next_move(n, r, c, grid)}
   end
 
   def test_next_move_is_left
@@ -28,7 +28,7 @@ class NextMoveTest < Minitest::Test
     # Princess' column postion will be 0; bot's will be 2
     grid = ['---', 'p-m', '---']
     expected = /LEFT\n/
-    assert_output(expected) { NextMove.next_move(n, r, c, grid)}
+    assert_output(expected) { BotSavesPrincessTwo.next_move(n, r, c, grid)}
   end
 
   def test_next_move_is_up
@@ -38,7 +38,7 @@ class NextMoveTest < Minitest::Test
     # Princess' row position will be 0; bot's will be 2
     grid = ['--p', '---', '--m']
     expected = /UP\n/
-    assert_output(expected) { NextMove.next_move(n, r, c, grid)}
+    assert_output(expected) { BotSavesPrincessTwo.next_move(n, r, c, grid)}
   end
 
   def test_next_move_is_down
@@ -48,6 +48,13 @@ class NextMoveTest < Minitest::Test
     # Princess' row position will be 2; bot's will be 1
     grid = ['---', '--m', '--p']
     expected = /DOWN\n/
-    assert_output(expected) { NextMove.next_move(n, r, c, grid)}
+    assert_output(expected) { BotSavesPrincessTwo.next_move(n, r, c, grid)}
+  end
+
+  def test_grid_size_input
+    n = 101
+    # n must be less than 100 n(<100)
+    expected = /RE-ENTER SIZE INPUT\n/
+    assert_output(expected) { BotSavesPrincessTwo.validate_size_input(n)}
   end
 end
