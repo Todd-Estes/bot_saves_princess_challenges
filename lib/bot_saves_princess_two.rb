@@ -1,4 +1,4 @@
-class PrincessPathTwo
+class BotSavesPrincessTwo
 
   def self.next_move(n, r, c, grid)
     # Check that grid size is less than 100
@@ -18,6 +18,13 @@ class PrincessPathTwo
     end
   end
 
+  def self.validate_size_input(n)
+    # n must be less than 100 n(<100)
+    if n >= 100
+      puts 'RE-ENTER SIZE INPUT'
+    end
+  end
+
   def self.find_princess_position(n, grid)
     row = []
     cell = []
@@ -30,11 +37,5 @@ class PrincessPathTwo
       end
     end
     return row, cell
-  end
-
-  def self.validate_size_input(n)
-    if n >= 100
-      puts 'RE-ENTER SIZE INPUT'
-    end
   end
 end
