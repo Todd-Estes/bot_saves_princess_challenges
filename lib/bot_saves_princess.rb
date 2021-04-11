@@ -28,7 +28,7 @@ class BotSavesPrincess
   end
 
   def self.validate_size_input(n)
-    #N must odd and (3 <= N < 100)
+    #N must be odd and (3 <= N < 100)
     if !n.odd? || n < 3 || n >= 100
       puts 'RE-ENTER INPUT PARAMETERS'
     end
