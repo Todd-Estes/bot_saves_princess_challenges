@@ -32,6 +32,8 @@ end
 ___________________________________________________________________________________________________________________________________
 **Bot Saves Princess 2** <br />
 This block of code includes two methods - just be sure copy and paste the entire block in the place of the _nextMove_ method on lines 3-5 in the HackerRank code buffer.
+
+Though not explicitly stated in the instructions, I made the assumption that the challenge's N input had the same restrictions as the first Bot Saves Princess challenge.
 ```
 def self.nextMove(n, r, c, grid)
   princess_position = (find_princess_position(n, grid)).flatten
