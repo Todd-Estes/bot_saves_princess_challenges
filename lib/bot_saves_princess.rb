@@ -1,6 +1,7 @@
-class PrincessPath
+class BotSavesPrincess
 
-  def display_path_to_princess(n,grid)
+  def self.display_path_to_princess(n,grid)
+
     moves = ((n - 1) / 2)
     if grid[0][0] == 'p'
      moves.times do
@@ -19,5 +20,12 @@ class PrincessPath
        puts 'DOWN', 'RIGHT'
      end
    end
+  end
+end
+
+def validate_size_input(n)
+  #
+  if !n.odd? || n < 3 || n >= 100
+    puts 'RE-ENTER INPUT PARAMETERS'
   end
 end
