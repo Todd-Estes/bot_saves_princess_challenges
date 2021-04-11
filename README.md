@@ -6,6 +6,7 @@ The following code blocks will satisfy each of the two required HackerRank Bot S
 ```
 def displayPathtoPrincess(n,grid)
   moves = ((n - 1) / 2)
+  
   if grid[0][0] == 'p'
     moves.times do
       puts 'UP', 'LEFT'
