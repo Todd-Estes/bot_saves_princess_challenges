@@ -1,8 +1,8 @@
 # Bot Saves Princess Challenges
 
-The following code blocks will satisfy each of the two required HackerRank Bot Saves Princess challenges. Copy the code from each block and paste it within its respective code buffers to check its functionality. The methods used to pass the challenges are slightly different from the code that is actually included in the project repository (the repo code reflects ruby convention in the method names and includes methods validating input for grids).
+The following code blocks will satisfy each of the two required HackerRank Bot Saves Princess challenges. Copy the code from each block and paste it within its respective code buffers to check its functionality. The methods used to pass the challenges are slightly different from the code that is actually included in the project repo (the repo code reflects ruby convention in the method names and includes methods validating input for grids).
 
-Each code challege has its own class which contains the methods needed to solve it, along with associated test files that test command line output. There is no actual input logic (i.e. _gets_ method) in any of the class methods.
+Within the repo, each code challege has its own class file which contains the methods needed to solve it, along with associated test files that test command line output. There is no actual input logic (i.e. _gets_ method) in any of the class methods.
 _________________________________________________________________________________________________________________________________
 **Bot Saves Princess 1** <br />
 This challenge could have been set with just two moves, as the test case always uses a 3x3 grid and we know the bot is at its middle, with the princess at one of its four corners. However, in the instructions it is explicitly stated that N, the grid size, could be anywhere between 3 and 99 (3 <= N < 100), aside from N also having to be an odd number.
