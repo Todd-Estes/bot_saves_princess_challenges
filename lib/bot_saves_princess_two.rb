@@ -1,7 +1,7 @@
 class BotSavesPrincessTwo
 
   def self.next_move(n, r, c, grid)
-    # Check that grid size is less than 100
+    # Check that grid size satisfies parameters
     validate_size_input(n)
     princess_position = (find_princess_position(n, grid)).flatten
     p_row = princess_position[0]

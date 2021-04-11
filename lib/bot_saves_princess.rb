@@ -1,6 +1,8 @@
 class BotSavesPrincess
 
   def self.display_path_to_princess(n,grid)
+    # Check that grid size satisfies parameters
+    validate_size_input(n)
     #moves, i.e. moves traveled from center of grid to princess
     moves = ((n - 1) / 2)
     #We know princess is in one of four courners
