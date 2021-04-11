@@ -51,10 +51,24 @@ class BotSavesPrincessTwoTest < Minitest::Test
     assert_output(expected) { BotSavesPrincessTwo.next_move(n, r, c, grid)}
   end
 
-  def test_grid_size_input
+  def test_grid_size_input_with_number_over_100
     n = 101
     # n must be less than 100 n(<100)
-    expected = /RE-ENTER SIZE INPUT\n/
+    expected = /RE-ENTER INPUT PARAMETERS\n/
+    assert_output(expected) { BotSavesPrincessTwo.validate_size_input(n)}
+  end
+
+  def test_grid_size_input_with_number_below_3
+    n = 1
+    # n must be >= 3
+    expected = /RE-ENTER INPUT PARAMETERS\n/
+    assert_output(expected) { BotSavesPrincessTwo.validate_size_input(n)}
+  end
+
+  def test_grid_size_input_with_even_number
+    n = 6
+    # n must be odd
+    expected = /RE-ENTER INPUT PARAMETERS\n/
     assert_output(expected) { BotSavesPrincessTwo.validate_size_input(n)}
   end
 end
