@@ -35,7 +35,7 @@ This block of code includes two methods - just be sure copy and paste the entire
 
 Though not explicitly stated in the instructions, I made the assumption that the challenge's N input had the same restrictions as the first Bot Saves Princess challenge.
 ```
-def self.nextMove(n, r, c, grid)
+def nextMove(n, r, c, grid)
   princess_position = (find_princess_position(n, grid)).flatten
   p_row = princess_position[0]
   p_col = princess_position[1]
