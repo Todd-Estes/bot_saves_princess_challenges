@@ -5,7 +5,9 @@ The following code blocks will satisfy each of the two required HackerRank Bot S
 Each code challege has its own class which contains the methods needed to solve it, along with associated test files that test command line output. There is no actual input logic (i.e. _gets_ method) in any of the class methods.
 _________________________________________________________________________________________________________________________________
 **Bot Saves Princess 1** <br />
-This challenge could have been set with just two moves, as the test case always uses a 3x3 grid. However, in the instructions it is explicitly stated that N, the grid size, could be anywhere between 3 and 99 (3 <= N < 100), aside from N also having to be an odd number. For the sake of the HackerRank challenge code, I left out checking N for size or oddness, but those validations are included in the repo class files.
+This challenge could have been set with just two moves, as the test case always uses a 3x3 grid and we know the bot is at its middle, with the princess at one of its four corners. However, in the instructions it is explicitly stated that N, the grid size, could be anywhere between 3 and 99 (3 <= N < 100), aside from N also having to be an odd number.
+
+For the sake of the HackerRank challenge code, I left out checking N for size or oddness, but those validations are included in the repo class files.
 ```
 def displayPathtoPrincess(n,grid)
   moves = ((n - 1) / 2)
