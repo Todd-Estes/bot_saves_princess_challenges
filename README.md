@@ -7,7 +7,7 @@ ________________________________________________________________________________
 **Bot Saves Princess 1** <br />
 This challenge could have been set with just two moves, as the test case always uses a 3x3 grid and we know the bot is at its middle, with the princess at one of its four corners. However, in the instructions it is explicitly stated that N, the grid size, could be anywhere between 3 and 99 (3 <= N < 100), aside from N also having to be an odd number.
 
-For the sake of the HackerRank challenge code, I left out checking N for size or oddness, but those validations are included in the repo class files.
+For the sake of the HackerRank challenge code, I left out checking N for size and oddness, but those validations are included in the repo class files.
 ```
 def displayPathtoPrincess(n,grid)
   moves = ((n - 1) / 2)
