@@ -3,29 +3,32 @@ class BotSavesPrincessTwo
   def self.next_move(n, r, c, grid)
     # Check that grid size is less than 100
     validate_size_input(n)
-    princess_position = (find_princess_position(n, grid)).flatten!
+    princess_position = (find_princess_position(n, grid)).flatten
     p_row = princess_position[0]
     p_col = princess_position[1]
     # r is bot's row; c is bot's column
-    if r < p_row
-      puts 'DOWN'
-    elsif r > p_row
-      puts 'UP'
+    if r != p_row
+      if r < p_row
+        puts 'DOWN'
+      else
+        puts 'UP'
+      end
     elsif c < p_col
       puts 'RIGHT'
-    elsif c > p_col
+    else
       puts 'LEFT'
     end
   end
 
   def self.validate_size_input(n)
-    # n must be less than 100 n(<100)
-    if n >= 100
-      puts 'RE-ENTER SIZE INPUT'
+    #N must odd and (3 <= N < 100)
+    if !n.odd? || n < 3 || n >= 100
+      puts 'RE-ENTER INPUT PARAMETERS'
     end
   end
 
   def self.find_princess_position(n, grid)
+    # check grid for p
     row = []
     cell = []
     (0...n).each do |i|
