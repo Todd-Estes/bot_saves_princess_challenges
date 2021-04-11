@@ -3,7 +3,8 @@
 The following code blocks will satisfy each of the two required HackerRank Bot Saves Princess challenges. Copy the code from each block and paste it within their respective code buffers to check their functionality. The methods used to pass the challenges are slightly different from the code that is actually included in the project repository (the repo code reflects ruby convention in the method names and includes methods validating input for grids).
 
 **Bot Saves Princess 1** 
-This challenge could have been set with just two moves, as the test case always uses a 3x3 grid. However, in the instructions it is explicitly stated that N, the grid size, could be anywhere between 3 and 99 (3 <= N < 100), aside from it also having to be a odd number. For the sake of the HackerRank challenge code, I left put checking n for size or oddness, but those validations are included in the repo class files.
+
+This challenge could have been set with just two moves, as the test case always uses a 3x3 grid. However, in the instructions it is explicitly stated that N, the grid size, could be anywhere between 3 and 99 (3 <= N < 100), aside from it also having to be an odd number. For the sake of the HackerRank challenge code, I left put checking n for size or oddness, but those validations are included in the repo class files.
 ```
 def displayPathtoPrincess(n,grid)
   moves = ((n - 1) / 2)
@@ -29,6 +30,7 @@ end
 ```
 
 **Bot Saves Princess 2** 
+This block of code includes two methods - just be sure copy and paste the entire block in the place of the _nextMove_ method on lines 3-5 in the HackerRank code buffer.
 ```
 def self.nextMove(n, r, c, grid)
   princess_position = (find_princess_position(n, grid)).flatten
