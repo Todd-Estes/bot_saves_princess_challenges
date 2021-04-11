@@ -1,5 +1,4 @@
 class BotSavesPrincessTwo
-
   def self.next_move(n, r, c, grid)
     # Check that grid size satisfies parameters
     validate_size_input(n)
