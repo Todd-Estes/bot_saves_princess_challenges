@@ -1,5 +1,4 @@
 class BotSavesPrincess
-
   def self.display_path_to_princess(n,grid)
     # Check that grid size satisfies parameters
     validate_size_input(n)
