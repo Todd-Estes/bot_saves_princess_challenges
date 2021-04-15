@@ -7,7 +7,7 @@ ________________________________________________________________________________
 **Bot Saves Princess 1** <br />
 The changes that I made to the original Bot Saves Princess 1 challenge basically remove the BotSavesPrincess class and treat the displayPathtoPrincess method just as a "runner" file. I felt that by creating separate Bot and Princess classes I gave more modularity to the code that would make future additions to it easier. One could instantiate multiple princesses with minimal additional methods or logic, and multiple bots could also be created in the future using its own _find_princess_position_-like method, without the row and column of the bot being given.
 
-The Navigator class handles the logic which provides the directional-based output solutions for the challenges. I feel like the methods are built and abstracted ideally for future iterative improvements. I do feel like the _next_move_ and _direction_ methods logic is similar enough to where they could be used as one method solved different types of problems, but I didn't quite have the time to figure out how to do it.
+The Navigator class handles the logic which provides the directional-based output solutions for the challenges. I feel like the methods are built and abstracted ideally for future iterative improvements.
 ```
 class Bot
   attr_reader :row, :column
