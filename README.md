@@ -3,7 +3,7 @@
 The following code blocks will satisfy each of the two required HackerRank Bot Saves Princess challenges. Copy the code from each block and paste it within its respective code buffers to check its functionality.
 _________________________________________________________________________________________________________________________________
 **Bot Saves Princess 1** <br />
-The changes that I made to the original Bot Saves Princess 1 challenge basically remove the BotSavesPrincess class and treat the displayPathtoPrincess method just as a "runner" file. I felt that by creating separate Bot and Princess classes I gave more modularity to the code that would make future additions to it easier. One could instantiate multiple princesses with minimal additional methods or logic, and multiple bots could also be created in the future using its own _find_princess_position_-like method, without the row and column of the bot being given.
+The changes that I made to the original Bot Saves Princess 1 challenge basically remove the BotSavesPrincess class and treat the displayPathtoPrincess method just as a "runner" file. I felt that by creating separate Bot and Princess classes I gave more modularity to the code that would make future additions easier. One could instantiate multiple princesses with minimal additional methods or logic, and multiple bots could also be created in the future using its own _find_princess_position_-like method, without the row and column of the bot being given.
 
 The Navigator class is responsible for handling the logic which provides the directional-based output solutions for the challenges.
 ```
