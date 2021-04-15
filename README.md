@@ -64,19 +64,19 @@ class Navigator
     end
   end
   
-   def next_move
-     if @bot_row != @princess_row
-       if @bot_row < @princess_row
-         puts 'DOWN'
-       else
-         puts 'UP'
-       end
-     elsif @bot_column < @princess_column
-       puts 'RIGHT'
-     else
-       puts 'LEFT'
-     end
-   end
+  def next_move
+    if @bot_row != @princess_row
+      if @bot_row < @princess_row
+        puts 'DOWN'
+      else
+        puts 'UP'
+      end
+    elsif @bot_column < @princess_column
+      puts 'RIGHT'
+    else
+      puts 'LEFT'
+    end
+  end
 
   def direction
     if @grid[0][0] == 'p'
@@ -165,19 +165,19 @@ class Navigator
     end
   end
   
-   def next_move
-     if @bot_row != @princess_row
-       if @bot_row < @princess_row
-         puts 'DOWN'
-       else
-         puts 'UP'
-       end
-     elsif @bot_column < @princess_column
-       puts 'RIGHT'
-     else
-       puts 'LEFT'
-     end
-   end
+  def next_move
+    if @bot_row != @princess_row
+      if @bot_row < @princess_row
+        puts 'DOWN'
+      else
+        puts 'UP'
+      end
+    elsif @bot_column < @princess_column
+      puts 'RIGHT'
+    else
+      puts 'LEFT'
+    end
+  end
 
   def direction
     if @grid[0][0] == 'p'
