@@ -115,36 +115,89 @@ ________________________________________________________________________________
 This block of code includes two methods - just be sure copy and paste the entire block in the place of the _nextMove_ method on lines 3-5 in the HackerRank code buffer.
 
 Though not explicitly stated in the instructions, I made the assumption that the challenge's N input had the same restrictions as the first Bot Saves Princess challenge.
+
+These are the exact same classes used in the first Bot Saves Princess challenge, with a different method being used from the Navigator class to render the bot's first directional move.
 ```
-def nextMove(n, r, c, grid)
-  princess_position = (find_princess_position(n, grid)).flatten
-  p_row = princess_position[0]
-  p_col = princess_position[1]
-  
-  if r != p_row
-    if r < p_row
-      puts 'DOWN'
-    else
-      puts 'UP'
-    end
-  elsif c < p_col
-    puts 'RIGHT'
-  else
-    puts 'LEFT'
+class Bot
+  attr_reader :row, :column
+  def initialize(row, column)
+    @row = row
+    @column = column
   end
 end
 
-def self.find_princess_position(n, grid)
-  row = []
-  cell = []
-  (0...n).each do |i|
-    grid[i].split('').each_with_index do |char, index|
-      if char == 'p'
-        row << i
-        cell << index
+class Princess
+  attr_reader :row, :column
+  def initialize(n, grid)
+    @grid_size = n
+    @grid = grid
+    @row = find_princess_position[0]
+    @column = find_princess_position[1]
+  end
+
+  def find_princess_position
+      coordinates = []
+      (0...@grid_size).each do |i|
+        @grid[i].split('').each_with_index do |char, index|
+          if char == 'p'
+            coordinates << i
+            coordinates << index
+          end
+        end
       end
+      return coordinates
+  end
+end
+
+class Navigator
+  attr_reader :required_moves, :grid, :bot_row, :bot_column, :princess_row, :princess_column
+  def initialize(n, grid, bot, princess)
+    @required_moves = n
+    @grid = grid
+    @bot_row = bot.row
+    @bot_column = bot.column
+    @princess_row = princess.row
+    @princess_column = princess.column
+    @vector = direction
+  end
+
+  def next_move
+     if @bot_row != @princess_row
+       if @bot_row < @princess_row
+         puts 'DOWN'
+       else
+         puts 'UP'
+       end
+     elsif @bot_column < @princess_column
+       puts 'RIGHT'
+     else
+       puts 'LEFT'
+     end
+   end
+
+  def direction
+    if @grid[0][0] == 'p'
+     "UP\nLEFT"
+   elsif @grid[0][-1] == 'p'
+     "UP\nRIGHT"
+   elsif @grid[-1][0] == 'p'
+     "DOWN\nLEFT"
+    else
+     "DOWN\nRIGHT"
     end
   end
-  return row, cell
+  
+    def display_direction
+   @required_moves.times do
+     puts @vector
+   end
+ end
+end
+
+def nextMove(n,r,c,grid)
+    mario = Bot.new(r, c)
+    peach = Princess.new(n, grid)
+    matrix = Navigator.new(n, grid, mario, peach)
+    matrix.next_move
 end
   ```
