@@ -49,18 +49,6 @@ class Navigator
     @princess_column = princess.column
     @vector = direction
   end
-
-  def get_to_row
-    if @bot_row > @princess_row
-      (0...(@bot_row - @princess_row)).each do
-        puts 'UP'
-      end
-    elsif @bot_row < @princess_row
-      (0...(@bot_row - @princess_row).abs).each do
-        puts 'DOWN'
-      end
-    end
-  end
   
   def next_move
     if @bot_row != @princess_row
@@ -149,18 +137,6 @@ class Navigator
     @princess_row = princess.row
     @princess_column = princess.column
     @vector = direction
-  end
-
-  def get_to_row
-    if @bot_row > @princess_row
-      (0...(@bot_row - @princess_row)).each do
-        puts 'UP'
-      end
-    elsif @bot_row < @princess_row
-      (0...(@bot_row - @princess_row).abs).each do
-        puts 'DOWN'
-      end
-    end
   end
   
   def next_move
