@@ -92,6 +92,7 @@ class ValidateInput
 end 
 
 def displayPathtoPrincess(n,grid)
+  ValidateInput.check_size(n)
   moves = ((n - 1) / 2)
   mario = Bot.new(moves, moves)
   peach = Princess.new(n, grid)
@@ -189,9 +190,10 @@ class ValidateInput
 end 
 
 def nextMove(n,r,c,grid)
-    mario = Bot.new(r, c)
-    peach = Princess.new(n, grid)
-    matrix = Navigator.new(n, grid, mario, peach)
-    matrix.next_move
+  ValidateInput.check_size(n)
+  mario = Bot.new(r, c)
+  peach = Princess.new(n, grid)
+  matrix = Navigator.new(n, grid, mario, peach)
+  matrix.next_move
 end
   ```
