@@ -27,16 +27,16 @@ class Princess
   end
 
   def find_princess_position
-      coordinates = []
+    coordinates = []
       (0...@grid_size).each do |i|
-        @grid[i].split('').each_with_index do |char, index|
-          if char == 'p'
-            coordinates << i
-            coordinates << index
-          end
-        end
+         @grid[i].split('').each_with_index do |char, index|
+           if char == 'p'
+             coordinates << i
+             coordinates << index
+           end
+         end
       end
-      return coordinates
+    return coordinates
   end
 end
 
@@ -52,7 +52,7 @@ class Navigator
     @vector = direction
   end
 
-    def get_to_row
+  def get_to_row
     if @bot_row > @princess_row
       (0...(@bot_row - @princess_row)).each do
         puts 'UP'
@@ -64,7 +64,7 @@ class Navigator
     end
   end
   
-  def next_move
+   def next_move
      if @bot_row != @princess_row
        if @bot_row < @princess_row
          puts 'DOWN'
@@ -90,19 +90,19 @@ class Navigator
     end
   end
   
-    def display_direction
-   @required_moves.times do
-     puts @vector
-   end
- end
+  def display_direction
+    @required_moves.times do
+      puts @vector
+    end
+  end
 end
 
 def displayPathtoPrincess(n,grid)
-    moves = ((n - 1) / 2)
-    mario = Bot.new(moves, moves)
-    peach = Princess.new(n, grid)
-    matrix = Navigator.new(moves, grid, mario, peach)
-    matrix.display_direction
+  moves = ((n - 1) / 2)
+  mario = Bot.new(moves, moves)
+  peach = Princess.new(n, grid)
+  matrix = Navigator.new(moves, grid, mario, peach)
+  matrix.display_direction
 end
 
 ```
@@ -128,16 +128,16 @@ class Princess
   end
 
   def find_princess_position
-      coordinates = []
+    coordinates = []
       (0...@grid_size).each do |i|
-        @grid[i].split('').each_with_index do |char, index|
-          if char == 'p'
-            coordinates << i
-            coordinates << index
-          end
-        end
+         @grid[i].split('').each_with_index do |char, index|
+           if char == 'p'
+             coordinates << i
+             coordinates << index
+           end
+         end
       end
-      return coordinates
+    return coordinates
   end
 end
 
@@ -153,7 +153,19 @@ class Navigator
     @vector = direction
   end
 
-  def next_move
+  def get_to_row
+    if @bot_row > @princess_row
+      (0...(@bot_row - @princess_row)).each do
+        puts 'UP'
+      end
+    elsif @bot_row < @princess_row
+      (0...(@bot_row - @princess_row).abs).each do
+        puts 'DOWN'
+      end
+    end
+  end
+  
+   def next_move
      if @bot_row != @princess_row
        if @bot_row < @princess_row
          puts 'DOWN'
@@ -179,11 +191,11 @@ class Navigator
     end
   end
   
-    def display_direction
-   @required_moves.times do
-     puts @vector
-   end
- end
+  def display_direction
+    @required_moves.times do
+      puts @vector
+    end
+  end
 end
 
 def nextMove(n,r,c,grid)
