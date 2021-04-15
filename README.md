@@ -83,6 +83,14 @@ class Navigator
   end
 end
 
+class ValidateInput
+  def self.check_size(n)
+    if !n.odd? || n < 3 || n >= 100
+      puts 'RE-ENTER INPUT PARAMETERS'
+    end
+  end
+end 
+
 def displayPathtoPrincess(n,grid)
   moves = ((n - 1) / 2)
   mario = Bot.new(moves, moves)
@@ -171,6 +179,14 @@ class Navigator
     end
   end
 end
+
+class ValidateInput
+  def self.check_size(n)
+    if !n.odd? || n < 3 || n >= 100
+      puts 'RE-ENTER INPUT PARAMETERS'
+    end
+  end
+end 
 
 def nextMove(n,r,c,grid)
     mario = Bot.new(r, c)
